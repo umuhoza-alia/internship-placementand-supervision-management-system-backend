@@ -15,19 +15,19 @@ public class SupervisorService {
     public SupervisorService(SupervisorRepository supervisorRepository) {
         this.supervisorRepository = supervisorRepository;
     }
-    
+    // save a new supervisor
     public Supervisor saveSupervisor(Supervisor supervisor) {
         return supervisorRepository.save(supervisor);
     }
-    
+    // Get all supervisors
     public List<Supervisor> getAllSupervisors() {
         return supervisorRepository.findAll();
     }
-    
+    // Get one supervisors by ID
     public Optional<Supervisor> getSupervisorById(UUID id) {
         return supervisorRepository.findById(id);
     }
-    
+    //Update a supervisor
     public Optional<Supervisor> updateSupervisor(UUID id, Supervisor updatedSupervisor) {
         return supervisorRepository.findById(id)
                 .map(existingSupervisor -> {
