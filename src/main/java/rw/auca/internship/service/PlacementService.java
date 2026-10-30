@@ -1,3 +1,4 @@
+
 package rw.auca.internship.service;
 
 import java.time.LocalDate;
@@ -5,21 +6,28 @@ import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
-import  org.springframework.stereotype.Service;
+import org.springframework.stereotype.Service;
 
 import rw.auca.internship.entity.Placement;
 import rw.auca.internship.entity.PlacementStatus;
 import rw.auca.internship.entity.Intern;
+import rw.auca.internship.entity.Supervisor;
+
 import rw.auca.internship.repository.PlacementRepository;
+import rw.auca.internship.repository.SupervisorRepository;
 
-@Service 
+@Service
 public class PlacementService {
-  
-  private final PlacementRepository placementRepository;
 
+    private final PlacementRepository placementRepository;
+    private final SupervisorRepository supervisorRepository;
 
-public PlacementService(PlacementRepository placementRepository) {
+    public PlacementService(
+            PlacementRepository placementRepository,
+            SupervisorRepository supervisorRepository) {
+
         this.placementRepository = placementRepository;
+        this.supervisorRepository = supervisorRepository;
     }
 
     // Save a new placement
@@ -67,32 +75,20 @@ public PlacementService(PlacementRepository placementRepository) {
     }
 
     // Find placements between two dates
-    public List<Placement> getPlacementsBetweenDates(LocalDate startDate, LocalDate endDate) {
-        return placementRepository.findByStartDateBetweenOrderByStartDateAsc(startDate, endDate);
+    public List<Placement> getPlacementsBetweenDates(
+            LocalDate startDate, LocalDate endDate) {
+
+        return placementRepository
+                .findByStartDateBetweenOrderByStartDateAsc(startDate, endDate);
+    }
+
+    // Find a supervisor by ID
+    public Optional<Supervisor> getSupervisorById(UUID supervisorId) {
+        return supervisorRepository.findById(supervisorId);
     }
 
     // Find interns assigned to a supervisor
     public List<Intern> getInternsBySupervisor(UUID supervisorId) {
         return placementRepository.findDistinctInternsBySupervisorId(supervisorId);
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
