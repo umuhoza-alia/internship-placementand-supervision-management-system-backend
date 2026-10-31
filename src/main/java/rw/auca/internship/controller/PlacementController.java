@@ -131,6 +131,28 @@ public ResponseEntity<String> updatePlacementStatus(
     }
 }
 
+// F1: Get placement statistics grouped by status
+@GetMapping("/stats/by-status")
+public ResponseEntity<List<Object[]>> getPlacementCountsByStatus() {
+    return ResponseEntity.ok(
+            placementService.getPlacementCountsByStatus()
+    );
+}
+
+// F2: Cancel placements for a supervisor on a specific day
+@PatchMapping("/cancel-day")
+public ResponseEntity<String> cancelPlacementsBySupervisorAndDate(
+        @RequestParam UUID supervisorId,
+        @RequestParam String date) {
+
+    LocalDate cancellationDate = LocalDate.parse(date);
+
+    int cancelled = placementService.cancelPlacementsBySupervisorAndDate(
+            supervisorId, cancellationDate);
+
+    return ResponseEntity.ok(cancelled + " placements cancelled");
+}
+
 }
 
 

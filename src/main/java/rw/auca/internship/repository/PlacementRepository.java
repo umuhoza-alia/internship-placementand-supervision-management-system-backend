@@ -3,7 +3,8 @@ package rw.auca.internship.repository;
 import java.util.UUID;
 import java.util.List;
 import java.time.LocalDate;
-
+import org.springframework.data.jpa.repository.Modifying;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
@@ -16,6 +17,23 @@ import rw.auca.internship.entity.PlacementStatus;
 
 public interface PlacementRepository 
         extends JpaRepository<Placement, UUID> {
+
+                // F1: Count placements grouped by status
+@Query("SELECT p.status, COUNT(p) FROM Placement p GROUP BY p.status")
+List<Object[]> countPlacementsByStatus();
+
+// F2: Cancel all placements for a supervisor on a specific day,
+// except placements that have already STARTED
+@Modifying
+@Transactional
+@Query("UPDATE Placement p " +
+       "SET p.status = rw.auca.internship.entity.PlacementStatus.DECLINED " +
+       "WHERE p.supervisor.id = :supervisorId " +
+       "AND p.startDate = :date " +
+       "AND p.status <> rw.auca.internship.entity.PlacementStatus.STARTED")
+int cancelPlacementsBySupervisorAndDate(
+        @Param("supervisorId") UUID supervisorId,
+        @Param("date") LocalDate date);
     
 List<Placement> findByStatusOrderByStartDateAsc(PlacementStatus status);
 

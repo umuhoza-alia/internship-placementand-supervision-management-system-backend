@@ -33,6 +33,19 @@ public class PlacementService {
     this.evaluationRepository = evaluationRepository;
 }
 
+// F1: Get placement counts grouped by status
+public List<Object[]> getPlacementCountsByStatus() {
+    return placementRepository.countPlacementsByStatus();
+}
+
+// F2: Cancel placements for a supervisor on a specific day
+public int cancelPlacementsBySupervisorAndDate(
+        UUID supervisorId, LocalDate date) {
+
+    return placementRepository.cancelPlacementsBySupervisorAndDate(
+            supervisorId, date);
+}
+
     // D1: Save a new placement with validation
 public String savePlacement(Placement placement) {
 
