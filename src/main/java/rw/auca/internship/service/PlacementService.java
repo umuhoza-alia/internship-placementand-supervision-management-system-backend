@@ -30,10 +30,34 @@ public class PlacementService {
         this.supervisorRepository = supervisorRepository;
     }
 
-    // Save a new placement
-    public Placement savePlacement(Placement placement) {
-        return placementRepository.save(placement);
+    // D1: Save a new placement with validation
+public String savePlacement(Placement placement) {
+
+    // Check if the placement date is in the past
+    if (placement.getStartDate().isBefore(LocalDate.now())) {
+        return "Placement date cannot be in the past";
     }
+
+    // Check if the supervisor already has a placement
+    // on the same date that is not DECLINED
+    boolean alreadyAssigned =
+            placementRepository.existsBySupervisorIdAndStartDateAndStatusNot(
+                    placement.getSupervisor().getId(),
+                    placement.getStartDate(),
+                    PlacementStatus.DECLINED
+            );
+
+    if (alreadyAssigned) {
+        return "Supervisor already has a placement starting on that date";
+    }
+
+    // Set the initial status to APPLIED
+    placement.setStatus(PlacementStatus.APPLIED);
+
+    placementRepository.save(placement);
+
+    return "Placement saved successfully";
+}
 
     // Get all placements
     public List<Placement> getAllPlacements() {
@@ -91,4 +115,49 @@ public class PlacementService {
     public List<Intern> getInternsBySupervisor(UUID supervisorId) {
         return placementRepository.findDistinctInternsBySupervisorId(supervisorId);
     }
+
+    // D2: Update placement status
+public String updatePlacementStatus(UUID id, PlacementStatus newStatus) {
+
+    // Find the placement
+    Optional<Placement> optionalPlacement =
+            placementRepository.findById(id);
+
+    // Check if placement exists
+    if (optionalPlacement.isEmpty()) {
+        return "The placement with that id does not exist";
+    }
+
+    Placement placement = optionalPlacement.get();
+
+    PlacementStatus currentStatus = placement.getStatus();
+
+    // Check whether the status transition is allowed
+    boolean allowed = false;
+
+    if (currentStatus == PlacementStatus.APPLIED &&
+            (newStatus == PlacementStatus.APPROVED ||
+             newStatus == PlacementStatus.DECLINED)) {
+
+        allowed = true;
+
+    } else if (currentStatus == PlacementStatus.APPROVED &&
+            (newStatus == PlacementStatus.STARTED ||
+             newStatus == PlacementStatus.DECLINED)) {
+
+        allowed = true;
+    }
+
+    // Reject an invalid status change
+    if (!allowed) {
+        return "Cannot change status from " +
+                currentStatus + " to " + newStatus;
+    }
+
+    // Save the new status
+    placement.setStatus(newStatus);
+    placementRepository.save(placement);
+
+    return "Placement status updated successfully";
+}
 }

@@ -9,6 +9,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import rw.auca.internship.entity.Intern;
 import rw.auca.internship.entity.Placement;
+import java.util.Optional;
 
 import rw.auca.internship.entity.PlacementStatus;
 
@@ -24,4 +25,18 @@ List<Placement> findByStartDateBetweenOrderByStartDateAsc(LocalDate startDate, L
 @Query("SELECT DISTINCT p.intern FROM Placement p " +
 "WHERE p.supervisor.id = :supervisorId")
 List<Intern> findDistinctInternsBySupervisorId(@Param("supervisorId") UUID supervisorId);
+
+
+// D1: Check whether a supervisor already has
+// a non-DECLINED placement on the same date
+boolean existsBySupervisorIdAndStartDateAndStatusNot(
+        UUID supervisorId,
+        LocalDate startDate,
+        PlacementStatus status
+);
+
+// D2: Find a placement by its ID for status updates
+Optional<Placement> findById(UUID id);
+
 }
+
