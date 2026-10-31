@@ -76,19 +76,18 @@ public ResponseEntity<Placement> getPlacementById(
         }
 //Delete a placement
 @DeleteMapping("/delete/{id}")
-public ResponseEntity<String> deletePlacement(
-    @PathVariable UUID id) {
+public ResponseEntity<String> deletePlacement(@PathVariable UUID id) {
 
-        if (placementService.deletePlacement(id)){
+    String result = placementService.deletePlacement(id);
 
-            return ResponseEntity.ok(
-                "Placement deleted successfully"
-            );
-        } 
-    return ResponseEntity.status(HttpStatus.NOT_FOUND)
-    .body("The placement with that id does not exists");
-    
+    if (result.equals("The placement with that id does not exist")) {
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(result);
+    } else if (result.equals("That placement has evaluations, delete them first")) {
+        return ResponseEntity.status(HttpStatus.CONFLICT).body(result);
+    } else {
+        return ResponseEntity.ok(result);
     }
+}
 
 //B2: Get placements by status
 @GetMapping("/by-status")

@@ -5,7 +5,7 @@ import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
-
+import rw.auca.internship.repository.EvaluationRepository;
 import org.springframework.stereotype.Service;
 
 import rw.auca.internship.entity.Placement;
@@ -21,14 +21,17 @@ public class PlacementService {
 
     private final PlacementRepository placementRepository;
     private final SupervisorRepository supervisorRepository;
+    private final EvaluationRepository evaluationRepository;
 
-    public PlacementService(
-            PlacementRepository placementRepository,
-            SupervisorRepository supervisorRepository) {
+   public PlacementService(
+        PlacementRepository placementRepository,
+        SupervisorRepository supervisorRepository,
+        EvaluationRepository evaluationRepository) {
 
-        this.placementRepository = placementRepository;
-        this.supervisorRepository = supervisorRepository;
-    }
+    this.placementRepository = placementRepository;
+    this.supervisorRepository = supervisorRepository;
+    this.evaluationRepository = evaluationRepository;
+}
 
     // D1: Save a new placement with validation
 public String savePlacement(Placement placement) {
@@ -83,15 +86,21 @@ public String savePlacement(Placement placement) {
                 });
     }
 
-    // Delete a placement
-    public boolean deletePlacement(UUID id) {
-        if (placementRepository.existsById(id)) {
-            placementRepository.deleteById(id);
-            return true;
-        }
+   // E3: Delete a placement only if it has no evaluations
+public String deletePlacement(UUID id) {
 
-        return false;
+    if (!placementRepository.existsById(id)) {
+        return "The placement with that id does not exist";
     }
+
+    if (evaluationRepository.existsByPlacementId(id)) {
+        return "That placement has evaluations, delete them first";
+    }
+
+    placementRepository.deleteById(id);
+
+    return "Placement deleted successfully";
+}
 
     // Find placements by status
     public List<Placement> getPlacementsByStatus(PlacementStatus status) {
