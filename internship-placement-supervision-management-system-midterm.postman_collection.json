@@ -1,0 +1,1131 @@
+{
+  "info": {
+    "_postman_id": "b527d0cd-a9c0-44b5-848b-c460e8c2aeec",
+    "name": "Internship Placement and Supervision Management System",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "58436827"
+  },
+  "item": [
+    {
+      "name": "A2_Create Internship Field",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"name\": \"Engineering\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/internship-fields/save",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "internship-fields",
+            "save"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "A2_Get All Internship Fields",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/internship-fields/all",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "internship-fields",
+            "all"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "A2_Get Internship Field By ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/internship-fields/008c8eb0-a638-42b5-81ca-970e3ef9e61b",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "internship-fields",
+            "008c8eb0-a638-42b5-81ca-970e3ef9e61b"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "A2_Update Internship Field",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"name\": \"Information Technology\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/internship-fields/update/092482ff-8ab0-4884-b17c-ac535e7b0cbc",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "internship-fields",
+            "update",
+            "092482ff-8ab0-4884-b17c-ac535e7b0cbc"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "A2_Delete Internship Field",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/internship-fields/delete/008c8eb0-a638-42b5-81ca-970e3ef9e61b",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "internship-fields",
+            "delete",
+            "008c8eb0-a638-42b5-81ca-970e3ef9e61b"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "A2_Create Host Company",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"companyNumber\": 3,\r\n    \"name\": \"Kigali Digital Services\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/host-companies/save",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "host-companies",
+            "save"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "A2_Get All Host Companies",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/host-companies/all",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "host-companies",
+            "all"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "A2_Get Host Company By ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/host-companies/d39666ec-925e-430c-9819-1cfca035e3ce",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "host-companies",
+            "d39666ec-925e-430c-9819-1cfca035e3ce"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "A2_Update Host Company",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"companyNumber\": 5,\r\n    \"name\": \"Tech Solutions Rwanda\"\r\n}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/host-companies/update/d39666ec-925e-430c-9819-1cfca035e3ce",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "host-companies",
+            "update",
+            "d39666ec-925e-430c-9819-1cfca035e3ce"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "A2_Delete Host Company",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/host-companies/delete/d39666ec-925e-430c-9819-1cfca035e3ce",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "host-companies",
+            "delete",
+            "d39666ec-925e-430c-9819-1cfca035e3ce"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "A2_Create Supervisor",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"firstName\": \"David\",\r\n    \"lastName\": \"Habimana\",\r\n    \"email\": \"david.habimana@example.com\",\r\n    \"hostCompany\": {\r\n        \"id\": \"f6227cc1-053f-4d79-98fd-c173efe6cc97\"\r\n    },\r\n    \"internshipFields\": [\r\n        {\r\n            \"id\": \"092482ff-8ab0-4884-b17c-ac535e7b0cbc\"\r\n        }\r\n    ]\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/supervisors/save",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "supervisors",
+            "save"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "A2_Get All Supervisors",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/supervisors/all",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "supervisors",
+            "all"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "A2_Get Supervisor By ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"firstName\": \"Peter\",\r\n    \"lastName\": \"Niyonzima\",\r\n    \"email\": \"peter.niyonzima@example.com\",\r\n    \"hostCompany\": {\r\n        \"id\": \"84edc243-b255-4137-9e4e-7784e20a8ca6\"\r\n    },\r\n    \"internshipFields\": []\r\n}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/supervisors/6c40d070-243a-4be2-bdb0-961f64855b3f",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "supervisors",
+            "6c40d070-243a-4be2-bdb0-961f64855b3f"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "A2_Update Supervisor",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"firstName\": \"Peter\",\r\n    \"lastName\": \"Niyonzima\",\r\n    \"email\": \"peter.niyonzima@example.com\",\r\n    \"hostCompany\": {\r\n        \"id\": \"32be1a95-5023-432b-beb3-b527254854df\"\r\n    },\r\n    \"internshipFields\": [\r\n        {\r\n            \"id\": \"6c8071a8-1699-4dff-bb1f-b08188ed858f\"\r\n        }\r\n    ]\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/supervisors/update/9cb5554c-335e-4a94-a09e-1be860d15ed1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "supervisors",
+            "update",
+            "9cb5554c-335e-4a94-a09e-1be860d15ed1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "A2_Delete Supervisor",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/supervisors/delete/6c40d070-243a-4be2-bdb0-961f64855b3f",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "supervisors",
+            "delete",
+            "6c40d070-243a-4be2-bdb0-961f64855b3f"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "A2_Create Intern",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"firstName\": \"Eric\",\r\n    \"lastName\": \"Mugisha\",\r\n    \"regNumber\": \"27896\",\r\n    \"email\": \"eric.mugisha@example.com\",\r\n    \"faculty\": \"Information Technology\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/interns/save",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "interns",
+            "save"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "A2_Get All Interns",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/interns/all",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "interns",
+            "all"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "A2_Get Intern By ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"startDate\": \"2026-11-02\",\r\n    \"status\": \"APPLIED\",\r\n    \"position\": \"Software Developer Intern\",\r\n    \"durationWeeks\": 12,\r\n    \"intern\": {\r\n        \"id\": \"34a72e77-8811-4a20-98e8-757372cb7b83\"\r\n    },\r\n    \"supervisor\": {\r\n        \"id\": \"c038cfbd-537d-4d8e-ab62-40812f30fd2a\"\r\n    }\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/interns/d53757c6-a52c-48d0-950a-36679d84275e",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "interns",
+            "d53757c6-a52c-48d0-950a-36679d84275e"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "A2_Update Intern",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"firstName\": \"Alice\",\r\n    \"lastName\": \"Uwase\",\r\n    \"regNumber\": \"TEST27892\",\r\n    \"email\": \"alice.uwase@example.com\",\r\n    \"faculty\": \"Software Engineering\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/interns/update/d53757c6-a52c-48d0-950a-36679d84275e",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "interns",
+            "update",
+            "d53757c6-a52c-48d0-950a-36679d84275e"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "A2_Delete Intern",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/interns/delete/d53757c6-a52c-48d0-950a-36679d84275e",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "interns",
+            "delete",
+            "d53757c6-a52c-48d0-950a-36679d84275e"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "A2,D1_Create Placement",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"startDate\": \"2026-11-29\",\r\n    \"position\": \"Network Administration Intern\",\r\n    \"durationWeeks\": 8,\r\n    \"status\": \"APPLIED\",\r\n    \"intern\": {\r\n        \"id\": \"2e241796-5065-467f-bfc9-a749a078e029\"\r\n    },\r\n    \"supervisor\": {\r\n        \"id\": \"9cb5554c-335e-4a94-a09e-1be860d15ed1\"\r\n    }\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/placements/save",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "placements",
+            "save"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "A2_Get All Placements",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/placements/all",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "placements",
+            "all"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "A2_Get Placement By ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/placements/651720f8-5ebf-49ee-8da8-c55b32ef4171",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "placements",
+            "651720f8-5ebf-49ee-8da8-c55b32ef4171"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "A2_Update Placement",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"startDate\": \"2026-11-12\",\r\n    \"position\": \"Junior Backend Developer Intern\",\r\n    \"durationWeeks\": 12,\r\n    \"intern\": {\r\n        \"id\": \"34a72e77-8811-4a20-98e8-757372cb7b83\"\r\n    },\r\n    \"supervisor\": {\r\n        \"id\": \"c038cfbd-537d-4d8e-ab62-40812f30fd2a\"\r\n    }\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/placements/update/402118b0-aa8e-41a9-9ce0-ac52cd6f3563",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "placements",
+            "update",
+            "402118b0-aa8e-41a9-9ce0-ac52cd6f3563"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "A2_Delete Placement",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"startDate\": \"2026-10-01\",\r\n    \"position\": \"Software Developer Intern\",\r\n    \"durationWeeks\": 12,\r\n    \"intern\": {\r\n        \"id\": \"34a72e77-8811-4a20-98e8-757372cb7b83\"\r\n    },\r\n    \"supervisor\": {\r\n        \"id\": \"c038cfbd-537d-4d8e-ab62-40812f30fd2a\"\r\n    }\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/placements/delete/402118b0-aa8e-41a9-9ce0-ac52cd6f3563",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "placements",
+            "delete",
+            "402118b0-aa8e-41a9-9ce0-ac52cd6f3563"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "B1_Get Interns By Last Name",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/interns/by-last-name?lastName=umuhoza",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "interns",
+            "by-last-name"
+          ],
+          "query": [
+            {
+              "key": "lastName",
+              "value": "umuhoza"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "B2_Get Placements By Status",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"startDate\": \"2026-11-10\",\r\n    \"status\": \"APPLIED\",\r\n    \"position\": \"Database Administrator Intern\",\r\n    \"durationWeeks\": 10,\r\n    \"intern\": {\r\n        \"id\": \"34a72e77-8811-4a20-98e8-757372cb7b83\"\r\n    },\r\n    \"supervisor\": {\r\n        \"id\": \"c038cfbd-537d-4d8e-ab62-40812f30fd2a\"\r\n    }\r\n}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/placements/by-status?status=STARTED",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "placements",
+            "by-status"
+          ],
+          "query": [
+            {
+              "key": "status",
+              "value": "STARTED"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "B3_Get Placements Between Dates",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/placements/between?start=2026-11-01&end=2026-11-30",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "placements",
+            "between"
+          ],
+          "query": [
+            {
+              "key": "start",
+              "value": "2026-11-01"
+            },
+            {
+              "key": "end",
+              "value": "2026-11-30"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "C1_Get Supervisors By Internship Field",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/supervisors/by-internship-field?name=finance",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "supervisors",
+            "by-internship-field"
+          ],
+          "query": [
+            {
+              "key": "name",
+              "value": "finance"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "C2_Get Free Host Companies",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/host-companies/free",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "host-companies",
+            "free"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "C3_Get Unused Internship Fields",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/internship-fields/unused",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "internship-fields",
+            "unused"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "C4_Get Interns By Supervisor",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/interns/of-supervisor/c038cfbd-537d-4d8e-ab62-40812f30fd2a",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "interns",
+            "of-supervisor",
+            "c038cfbd-537d-4d8e-ab62-40812f30fd2a"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "D2_Update Placement Status",
+      "request": {
+        "method": "PATCH",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/placements/fe13d3cc-e447-4d27-aa10-f9ec13d5f65c/status?status=DECLINED",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "placements",
+            "fe13d3cc-e447-4d27-aa10-f9ec13d5f65c",
+            "status"
+          ],
+          "query": [
+            {
+              "key": "status",
+              "value": "DECLINED"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "D3_Add Internship Field To Supervisor",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/supervisors/9cb5554c-335e-4a94-a09e-1be860d15ed1/internship-fields/6c8071a8-1699-4dff-bb1f-b08188ed858f",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "supervisors",
+            "9cb5554c-335e-4a94-a09e-1be860d15ed1",
+            "internship-fields",
+            "6c8071a8-1699-4dff-bb1f-b08188ed858f"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "D4_Change Supervisor Host Company",
+      "request": {
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"criterion\": \"Technical Skills\",\r\n    \"comments\": \"The intern demonstrates good programming skills.\",\r\n    \"score\": 85\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/supervisors/9cb5554c-335e-4a94-a09e-1be860d15ed1/host-company?companyNumber=1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "supervisors",
+            "9cb5554c-335e-4a94-a09e-1be860d15ed1",
+            "host-company"
+          ],
+          "query": [
+            {
+              "key": "companyNumber",
+              "value": "1"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "F2_Cancel Placements By Supervisor And Date",
+      "request": {
+        "method": "PATCH",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/placements/cancel-day?supervisorId=c038cfbd-537d-4d8e-ab62-40812f30fd2a&date=2026-11-22",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "placements",
+            "cancel-day"
+          ],
+          "query": [
+            {
+              "key": "supervisorId",
+              "value": "c038cfbd-537d-4d8e-ab62-40812f30fd2a"
+            },
+            {
+              "key": "date",
+              "value": "2026-11-22"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "E1_Create Evaluation",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"criterion\": \"Technical Skills\",\r\n    \"comments\": \"The intern demonstrates good programming skills and problem-solving ability.\",\r\n    \"score\": 85\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/evaluations/save?placementId=e217c618-658f-447d-b3a5-e267745d9f14",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "evaluations",
+            "save"
+          ],
+          "query": [
+            {
+              "key": "placementId",
+              "value": "e217c618-658f-447d-b3a5-e267745d9f14"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "E2_Get Evaluations By Intern",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/evaluations/intern/27892",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "evaluations",
+            "intern",
+            "27892"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "E3_Delete Evaluation",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/evaluations/delete/66b7eb83-1553-48bd-9152-b03eac485d60",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "evaluations",
+            "delete",
+            "66b7eb83-1553-48bd-9152-b03eac485d60"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "F1_Get Placement Statistics By Status",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/placements/stats/by-status",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "placements",
+            "stats",
+            "by-status"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
